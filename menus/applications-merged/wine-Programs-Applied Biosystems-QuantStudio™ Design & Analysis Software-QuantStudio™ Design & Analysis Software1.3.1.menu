@@ -1,0 +1,24 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+"http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
+<Menu>
+  <Name>Applications</Name>
+  <Menu>
+    <Name>wine-wine</Name>
+    <Directory>wine-wine.directory</Directory>
+  <Menu>
+    <Name>wine-Programs</Name>
+    <Directory>wine-Programs.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-Applied Biosystems</Name>
+    <Directory>wine-Programs-Applied Biosystems.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-Applied Biosystems-QuantStudio™ Design &amp; Analysis Software</Name>
+    <Directory>wine-Programs-Applied Biosystems-QuantStudio™ Design &amp; Analysis Software.directory</Directory>
+    <Include>
+      <Filename>wine-Programs-Applied Biosystems-QuantStudio™ Design &amp; Analysis Software-QuantStudio™ Design &amp; Analysis Software1.3.1.desktop</Filename>
+    </Include>
+  </Menu>
+  </Menu>
+  </Menu>
+  </Menu>
+</Menu>
