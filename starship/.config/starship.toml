@@ -20,6 +20,7 @@ $nim\
 $rust\
 [](fg:#86BBD8 bg:#06969A)\
 $docker_context\
+$conda\
 [](fg:#06969A bg:#33658A)\
 $time\
 [ ](fg:#33658A)\
@@ -121,6 +122,12 @@ format = '[(\($virtualenv\) )]($style)'
 symbol = ""
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+
+[conda]
+symbol = "🅒 "
+style = "bg:#06969A"
+format = '[ $symbol ($environment) ]($style)'
+ignore_base = false
 
 [time]
 disabled = false
