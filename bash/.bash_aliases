@@ -7,7 +7,7 @@ alias i3c="nvim ~/.config/i3/config"
 alias i3bc="nvim ~/.config/i3/i3blocks.conf"
 alias TBsh="/home/vs/.TBtools/Linux.sh"
 alias TBjar="/home/vs/.TBtools/TBtools_JRE1.6.jar"
-alias cdwm="cd /home/vs/.config/chadwm/chadwm/chadwm && nvim config.h"
+alias cdwm="cd /home/vs/.config/chadwm/chadwm && nvim config.h"
 
 #######################################################
 # GENERAL ALIAS'S
