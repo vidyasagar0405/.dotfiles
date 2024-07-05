@@ -1,3 +1,4 @@
-# No widgets enabled!
-
-exit 0
+sleep 5s
+killall conky
+cd "/home/vs/.conky/Gotham"
+conky -c "/home/vs/.conky/Gotham/Gotham" &
