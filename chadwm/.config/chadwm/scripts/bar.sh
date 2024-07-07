@@ -60,7 +60,6 @@ disk() {
   printf "^c$red^ 󰆓 $hdd%"
 }
 
-volumeicon &
 while true; do
   
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)

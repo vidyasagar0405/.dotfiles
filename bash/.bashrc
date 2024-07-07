@@ -460,7 +460,10 @@ export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bi
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
-. /usr/share/fzf/key-bindings.bash
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+#. /usr/share/fzf/key-bindings.bash
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
