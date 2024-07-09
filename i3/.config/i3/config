@@ -254,7 +254,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+x focus parent
 
 # open new empty workspace
 bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/scripts/empty_workspace
@@ -292,9 +292,9 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id /usr/bin/firefox
-bindsym $mod+n exec --no-startup-id /usr/bin/thunar
+bindsym $mod+a exec --no-startup-id /usr/bin/thunar
 bindsym Print exec --no-startup-id scrot ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
-bindsym Print+Ctrl exec --no-startup-id scrot --select ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym $mod+Print exec --no-startup-id scrot --select ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
@@ -503,7 +503,7 @@ set $yellowbrown	#e1b700
 #180437e6
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    	#ffa300		$darkblue	$white		#ffa300		#ffa300
+client.focused		    	$darkgrey	$darkblue	$white		$darkgrey	$darkgrey
 client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
 client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
 client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown

@@ -20,8 +20,8 @@ draw_outline no
 draw_borders no
 draw_graph_borders no
 default_color white
-default_shade_color red
-default_outline_color green
+default_shade_color
+default_outline_color
 alignment top_middle
 gap_x -60
 gap_y 20
