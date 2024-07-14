@@ -1,0 +1,32 @@
+import = [
+  "/usr/lib/node_modules/alacritty-themes/themes/One-Dark.toml"
+]
+
+[window]
+opacity = 0.8
+
+  [window.padding]
+  x = 10
+  y = 10
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 10
+
+  [font.bold]
+  family = "MesloLGS Nerd Font Mono"
+  style = "Bold"
+
+  [font.bold_italic]
+  family = "MesloLGS Nerd Font Mono"
+  style = "Bold Italic"
+
+  [font.italic]
+  family = "MesloLGS Nerd Font Mono"
+  style = "Italic"
+
+  [font.normal]
+  family = "MesloLGS Nerd Font Mono"
+  style = "Regular"

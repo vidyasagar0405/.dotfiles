@@ -5,7 +5,7 @@ iatest=$(expr index "$-" i)
 # SOURCED ALIAS'S AND SCRIPTS BY zachbrowne.me
 #######################################################
 if [ -f /usr/bin/fastfetch ]; then
-	fastfetch --config /usr/share/fastfetch/presets/examples/8.jsonc
+	fastfetch
 fi
 
 # Source global definitions

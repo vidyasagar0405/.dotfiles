@@ -8,6 +8,7 @@ interval=0
 # load colors
 . ~/.config/chadwm/scripts/bar_themes/onedark
 . /home/vs/.config/chadwm/scripts/battery
+. /home/vs/.config/chadwm/scripts/cpu_usage
 
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
@@ -21,7 +22,7 @@ pkg_updates() {
   updates=$(checkupdates | wc -l)   # arch
   # updates=$(aptitude search '~U' | wc -l)  # apt (ubuntu,debian etc)
 
-  if [ -z "$updates" ]; then
+  if [ "$updates" -eq 0 ]; then
     printf "  ^c$green^    Fully Updated"
   else
     printf "  ^c$green^    $updates"" updates"
@@ -34,8 +35,8 @@ battery() {
 }
 
 brightness() {
-  printf "^c$red^   "
-  printf "^c$red^%.0f\n" $(brightnessctl | grep -oP '\(\K[0-9]+(?=%\))')
+  printf "^c$yellow^   "
+  printf "^c$yellow^%.0f\n" $(brightnessctl | grep -oP '\(\K[0-9]+(?=%\))')
 }
 
 mem() {
@@ -65,5 +66,5 @@ while true; do
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$updates $(cpu) $(mem) $(disk) $(brightness) $(get_battery) $(clock)"
+  sleep 1 && xsetroot -name "$updates $(. /home/vs/.config/chadwm/scripts/cpu_usage) $(mem) $(disk) $(brightness) $(get_battery) $(clock)"
 done
