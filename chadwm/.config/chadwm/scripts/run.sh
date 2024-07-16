@@ -2,10 +2,10 @@
 input-remapper-control --command autoload --config-dir /home/vs/.config/input-remapper-2/ &
 xrdb merge ~/.Xresources 
 xbacklight -set 10 &
-nitrogen --restore
+/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/
 xset r rate 200 50 &
 picom &
-~/.config/chadwm/scripts/bar.sh &
+dash ~/.config/chadwm/scripts/bar.sh &
 nm-applet &
 blueman-applet &
 . /home/vs/run_volumeicon.sh

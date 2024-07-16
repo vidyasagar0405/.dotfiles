@@ -1,13 +1,13 @@
 #!/bin/dash
 
-# colors
+# catppuccin colors
 
-purple=#c397d8
-yellow=#EBCB8B
-black=#1e222a
-green=#7eca9c
-white=#abb2bf
-grey=#282c34
-blue=#7aa2f7
-red=#d47d85
-darkblue=#668ee3
+purple=#cba6f7 #Mauve
+yellow=#f9e2af
+black=#1E1D2D
+green=#ABE9B3
+white=#D9E0EE
+grey=#282737
+blue=#96CDFB
+red=#F28FAD
+darkblue=#83bae8

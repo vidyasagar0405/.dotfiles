@@ -8,7 +8,6 @@ interval=0
 # load colors
 . ~/.config/chadwm/scripts/bar_themes/onedark
 . /home/vs/.config/chadwm/scripts/battery
-. /home/vs/.config/chadwm/scripts/cpu_usage
 
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
@@ -66,5 +65,5 @@ while true; do
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$updates $(. /home/vs/.config/chadwm/scripts/cpu_usage) $(mem) $(disk) $(brightness) $(get_battery) $(clock)"
+  sleep 1 && xsetroot -name "$updates $(cpu) $(mem) $(disk) $(brightness) $(get_battery) $(clock)"
 done

@@ -489,24 +489,41 @@ for_window [class="urxvt"] border pixel 2
 ######################################
 
 # Define colors variables:
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
-set $darkgrey		#383c4ae6
-set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
+##########################
+# catppuccin mocha colour scheme:
+##########################
+
+
+# endevouros colour scheme
+##########################
+# set $darkbluetrans	#08052be6
+# set $darkblue		#08052b
+# set $lightblue		#5294e2
+# set $urgentred		#e53935
+# set $white		#ffffff
+# set $black		#000000
+# set $purple		#e345ff
+# set $darkgrey		#383c4ae6
+# set $grey		#b0b5bd
+# set $mediumgrey		#8b8b8b
+# set $yellowbrown	#e1b700
 #180437e6
 # define colors for windows:
+# catppuccin colours:
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+# endevouros colours:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    	$darkgrey	$darkblue	$white		$darkgrey	$darkgrey
-client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
-client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
-client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
+# client.focused		    	$darkgrey	$darkblue	$white		$darkgrey	$darkgrey
+# client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
+# client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
+# client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
 #client.focused          #556064 #556064 #80FFF9 #FDF6E3
 #client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
@@ -520,6 +537,17 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
+	colors {
+    background         $base
+    statusline         $text
+    focused_statusline $text
+    focused_separator  $base
+    focused_workspace  $base $base $green
+    active_workspace   $base $base $blue
+    inactive_workspace $base $base $surface1
+    urgent_workspace   $base $base $surface1
+    binding_mode       $base $base $surface1
+  }
 		font pango: Noto Sans Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position bottom 
@@ -535,16 +563,16 @@ bar {
 strip_workspace_numbers yes
 ##strip_workspace_name no
 
-		    colors {
-		    separator          $purple
-		    background         #180437e6
-		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$180437e6	$darkgrey	$purple
-		active_workspace	$lightblue      	$180437e6	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	}
+# 		    colors {
+# 		    separator          $purple
+# 		    background         #180437e6
+# 		    statusline         $white
+# #                          		border 		        bg		txt		indicator
+# 		focused_workspace	$mediumgrey	   	$180437e6	$darkgrey	$purple
+# 		active_workspace	$lightblue      	$180437e6	$darkgrey	$purple
+# 		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+# 		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+	# }
 }
 
 # you can add different bars for multidisplay setups on each display:
