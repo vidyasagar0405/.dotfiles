@@ -1,1 +1,10 @@
- @theme "~/.local/share/rofi/themes/deep-purple.rasi"
+/** Basic config file **/
+
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+  display-drun: "";
+  display-window: "﩯 ";
+  display-combi: "  ";
+}
+@theme "/home/vs/.local/share/rofi/themes/deep-purple.rasi"

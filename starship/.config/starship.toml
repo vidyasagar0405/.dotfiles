@@ -21,6 +21,7 @@ $haskell\
 $python\
 [](fg:teal bg:blue)\
 $docker_context\
+$conda\
 [](fg:blue bg:purple)\
 $time\
 [ ](fg:purple)\
@@ -170,6 +171,12 @@ format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 symbol = ""
 style = "bg:mantle"
 format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[conda]
+symbol = "🅒 "
+style = "bg:blue"
+format = '[[ $symbol ($environment) ](fg:base bg:blue)]($style)'
+ignore_base = false
 
 [time]
 disabled = false
