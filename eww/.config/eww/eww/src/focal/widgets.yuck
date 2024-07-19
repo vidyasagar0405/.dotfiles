@@ -17,6 +17,6 @@
       :class 'RAM'
       :boxClass 'RAMBOX'
       )
-      (button :class 'mute' :onclick 'amixer set Master 0' '' )
+      (button :class 'mute' :onclick '/home/vs/.config/i3/scripts/volume_brightness.sh volume_mute' '' )
      )
 )

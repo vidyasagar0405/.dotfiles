@@ -1,6 +1,6 @@
 (defwidget headerBtns[]
   (box :space-evenly false :valign 'end' :halign 'end' :class 'headerBtns'
-       (button :class 'min' :onclick 'eww close eww' '')
+       (button :class 'min' :onclick 'eww -c /home/vs/dotfiles/eww/.config/eww/eww close eww' '')
        (button :class 'close' :onclick 'eww kill'   '󰅙')
       )
   )

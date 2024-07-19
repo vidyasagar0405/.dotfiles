@@ -12,12 +12,12 @@
        :class 'footerBtns'
  
   (btn :name ""
-  :command " rofi -modi drun -show drun -config ~/.config/chadwm/rofi/config.rasi &"
+  :command "rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi &"
     :class "restart"
   )
 
 (btn :name "󰌾"
-  :command "slock & doas zzz"
+  :command "betterlockscreen -l"
   :class "lock"
  )
 
@@ -27,7 +27,7 @@
   )
 
  (btn :name "" 
-    :command "systemctl poweroff"
+    :command "doas zzz"
     :class "sleep"
   )
 ))

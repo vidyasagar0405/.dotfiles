@@ -19,7 +19,7 @@
   (box :orientation 'v' :class 'hdd'
    (progressBar
       :value disk 
-      :text 'HDD'
+      :text 'SSD'
       :class 'DISK'
       )
   )
@@ -27,7 +27,7 @@
 
 (defwidget fetch[]
  (box :class 'fetch' 
- (box :class 'logo'  '' ) 
+ (box :class 'logo'  '' ) 
   (box :orientation 'h' :class 'fetchContent' :space-evenly false
   (title) 
   (details)
