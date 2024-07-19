@@ -429,6 +429,14 @@ lazyg() {
 	git push
 }
 
+git-clone-sub() {
+	git clone -n --depth=1 --filter=tree:0 "$1"
+	cd $(echo "$1" | grep -o '[^/]*$' | sed 's/\.git$//')
+	git sparse-checkout set --no-cone "$2"
+	git checkout
+	rm .git/
+}
+
 function hb {
     if [ $# -eq 0 ]; then
         echo "No file path specified."

@@ -37,7 +37,7 @@ get_battery()
 			BAT_ICON=$BATTERY_2_ICON
 		fi
 	fi
-	printf "^c#ABE9B3^ $ICON$BAT_ICON  $capacity%"
+	printf "^c#ABE9B3^ $ICON$BAT_ICON  $capacity"
 }
 
 get_battery

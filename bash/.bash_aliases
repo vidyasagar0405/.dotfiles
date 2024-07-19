@@ -9,6 +9,8 @@ alias TBsh="/home/vs/.TBtools/Linux.sh"
 alias TBjar="/home/vs/.TBtools/TBtools_JRE1.6.jar"
 alias cdwm="cd /home/vs/.config/chadwm/chadwm && sudo nvim config.h"
 alias bar.sh="sudo nvim /home/vs/.config/chadwm/scripts/bar.sh"
+alias chwall="/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/ --save"
+
 #######################################################
 # GENERAL ALIAS'S
 #######################################################
