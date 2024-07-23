@@ -38,6 +38,7 @@ export HISTSIZE=5000
 
 # Don't put duplicate lines in the history and do not add lines that start with a space
 export HISTCONTROL=erasedups:ignoredups:ignorespace
+export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 # Check the window size after each command and, if necessary, update the values of LINES and COLUMNS
 shopt -s checkwinsize
