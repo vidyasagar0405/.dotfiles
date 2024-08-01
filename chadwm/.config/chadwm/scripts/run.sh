@@ -6,7 +6,6 @@ xbacklight -set 10 &
 xset r rate 200 50 &
 picom &
 dash ~/.config/chadwm/scripts/bar.sh &
-eww -c /home/vs/dotfiles/eww/.config/eww/bar open bar
 nm-applet &
 blueman-applet &
 . /home/vs/run_volumeicon.sh
