@@ -10,7 +10,11 @@ alias TBjar="/home/vs/.TBtools/TBtools_JRE1.6.jar"
 alias cdwm="cd /home/vs/.config/chadwm/chadwm && sudo nvim config.h"
 alias bar.sh="sudo nvim /home/vs/.config/chadwm/scripts/bar.sh"
 alias chwall="/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/ --save"
-alias cursor="/home/vs/Apps/cursor-0.37.1x86_64.AppImage"
+alias cursor="/home/vs/Apps/cursor-0.39.3-build-2408092hoyaxt9m-x86_64.AppImage"
+alias linutil="curl -fsSL https://christitus.com/linux | sh"
+alias sx="nvim /home/vs/.config/bspwm/sxhkdrc"
+alias y="yazi"
+alias ff="fuck"
 
 #######################################################
 # GENERAL ALIAS'S
@@ -44,6 +48,8 @@ alias apt-get='sudo apt-get'
 alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
 alias vi='nvim'
+alias vim='nvim'
+alias v='nvim'
 alias svi='sudo vi'
 alias vis='nvim "+set si"'
 
@@ -95,7 +101,7 @@ alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
 # Search files in the current folder
 alias f="find . | rg "
-alias sf="sudo find . | rg "
+alias sf="sudo find / | rg "
 
 # Count all files (recursively) in the current folder
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"

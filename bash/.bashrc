@@ -489,3 +489,5 @@ fi
 unset __conda_setup
 conda deactivate
 # <<< conda initialize <<<
+
+eval "$(thefuck --alias)"
