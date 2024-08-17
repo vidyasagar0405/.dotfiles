@@ -7,4 +7,9 @@ configuration {
   display-window: "﩯 ";
   display-combi: "  ";
 }
-@theme "/home/vs/.local/share/rofi/themes/deep-purple.rasi"
+//@theme "/home/vs/.local/share/rofi/themes/deep-purple.rasi"
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+//@theme "/usr/share/rofi/themes/arthur.rasi"
+//@theme "/home/vs/.config/rofi/themes/lobster.rasi"
+//@theme "/home/vs/.config/rofi/themes/nord.rasi"
+@theme "/home/vs/.config/rofi/themes/lobster_launcher.rasi"

@@ -6,8 +6,13 @@ xbacklight -set 10 &
 xset r rate 200 50 &
 picom --animations -b &
 dash ~/.config/chadwm/scripts/bar.sh &
+dbus-update-activation-environment --systemd --all &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+flameshot &
+dunst &
 nm-applet &
 blueman-applet &
-/usr/local/bin/dwm
+volumeicon &
+# /usr/local/bin/dwm
 # betterlockscreen -u /home/vs/Pictures/wallpapers/
 #while type dwm >/dev/null; do dwm && continue || break; done
