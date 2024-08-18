@@ -22,9 +22,9 @@ pkg_updates() {
   # updates=$(aptitude search '~U' | wc -l)  # apt (ubuntu,debian etc)
 
   if [ "$updates" -eq 0 ]; then
-    printf "  ^c$green^    Fully Updated"
+    printf "  ^c$green^    F"
   else
-    printf "  ^c$green^    $updates"" updates"
+    printf "  ^c$green^    $updates"
   fi
 }
 
@@ -52,7 +52,7 @@ wlan() {
 
 clock() {
 	printf "^c$black^ ^b$darkblue^ 󱑆 "
-	printf "^c$black^^b$blue^ $(date +"%a, %B %d %l:%M%P"| sed 's/  / /g')  "
+	printf "^c$black^^b$blue^ $(date +"%b %d %a,%l:%M%P"| sed 's/  / /g')  "
 }
 
 disk() {

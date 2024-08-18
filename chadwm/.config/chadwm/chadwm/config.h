@@ -93,6 +93,7 @@ static const Rule rules[] = {
     { "Eww",                NULL,       NULL,       0,            0,           1,           -1 },
     { "pavucontrol",        NULL,       NULL,       0,            0,           1,           -1 },
     { "Blueman-manager",    NULL,       NULL,       0,            0,           1,           -1 },
+    { "mpv",                NULL,       NULL,       0,            0,           1,           -1 },
 };
 
 /* layout(s) */
