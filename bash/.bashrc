@@ -491,6 +491,5 @@ conda deactivate
 # <<< conda initialize <<<
 
 eval "$(thefuck --alias)"
-export TERM=kitty
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
