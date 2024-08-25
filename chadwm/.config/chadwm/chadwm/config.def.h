@@ -6,11 +6,11 @@
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int default_border = 0;   /* to switch back to default border after dynamic border resizing via keybinds */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 5;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 5;       /* vert outer gap between windows and screen edge */
-static const unsigned int cornerrad = 8;
+static const unsigned int gappih    = 3;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 3;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 3;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 3;       /* vert outer gap between windows and screen edge */
+static const unsigned int cornerrad = 0;
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -62,13 +62,13 @@ static const char *colors[][3]      = {
 /* tagging */
 static char *tags[] = {" ", " ", " ", "4", "5", "6", "7", "8", "9"};
 
-static const char* btop[] = { "alacritty", "-e", "btop", NULL };
+static const char* btop[] = { "kitty", "-e", "btop", NULL };
 static const char* powermenu[] = { "bash", "/home/vs/.config/powermenu/powermenu.sh", NULL };
 
 static const Launcher launchers[] = {
     /* command     name to display */
-    { btop,         "󰨇 " },
-    { powermenu,    "󰐦 " },
+    { btop,         "󰨇" },
+    { powermenu,    "󰐦" },
 };
 
 static const int tagschemes[] = {
@@ -90,8 +90,10 @@ static const Rule rules[] = {
     { "Gimp",               NULL,       NULL,       0,            0,           1,           -1 },
     { "Firefox",            NULL,       NULL,       1 << 8,       0,           0,           -1 },
     { "eww",                NULL,       NULL,       0,            0,           1,           -1 },
+    { "Eww",                NULL,       NULL,       0,            0,           1,           -1 },
     { "pavucontrol",        NULL,       NULL,       0,            0,           1,           -1 },
-    { "blueman-manager",    NULL,       NULL,       0,            0,           1,           -1 },
+    { "Blueman-manager",    NULL,       NULL,       0,            0,           1,           -1 },
+    { "mpv",                NULL,       NULL,       0,            0,           1,           -1 },
 };
 
 /* layout(s) */
@@ -140,9 +142,9 @@ static Key keys[] = {
     /* modifier                         key         function        argument */
 
     // brightness and audio 
-    {0,                     XF86XK_AudioMute,       spawn,          SHCMD("pamixer -t")},
-    {0,              XF86XK_AudioRaiseVolume,       spawn,          SHCMD("pamixer -i 5")},
-    {0,              XF86XK_AudioLowerVolume,       spawn,          SHCMD("pamixer -d 5")},
+    {0,                     XF86XK_AudioMute,       spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh volume_mute")},
+    {0,              XF86XK_AudioRaiseVolume,       spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh volume_up")},
+    {0,              XF86XK_AudioLowerVolume,       spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh volume_down")},
     {0,              XF86XK_MonBrightnessDown,      spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh brightness_down")},
     {0,              XF86XK_MonBrightnessUp,        spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh brightness_up")},
     {0,              XF86XK_AudioPlay,	            spawn,          SHCMD("playerctl play-pause")},
@@ -157,8 +159,9 @@ static Key keys[] = {
 
     { MODKEY,                           XK_d,       spawn,          SHCMD("rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi") },
     { MODKEY,                           XK_t,       spawn,          SHCMD("rofi -show window -config ~/.config/rofi/rofidmenu.rasi") },
-    { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
-    { MODKEY,                           XK_w,       spawn,          SHCMD("thorium-browser")},
+    { MODKEY,                           XK_Return,  spawn,          SHCMD("kitty")},
+    { MODKEY,                           XK_w,       spawn,          SHCMD("firefox")},
+    { MODKEY|ControlMask,               XK_w,       spawn,          SHCMD("/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/ --save")},
     { MODKEY,                           XK_a,       spawn,          SHCMD("thunar")},
     { MODKEY|ShiftMask,                 XK_c,       spawn,          SHCMD("rofi -modi clipboard:greenclip print -show clipboard -config ~/.config/rofi/rofidmenu.rasi")},
 

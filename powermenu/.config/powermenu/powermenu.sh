@@ -12,6 +12,7 @@ reboot='󰜉'
 lock=''
 suspend=''
 logout='󰍃'
+close='X'
 
 # Rofi CMD
 rofi_cmd() {
@@ -23,7 +24,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown\n$close" | rofi_cmd
 }
 
 # Execute Command
@@ -35,6 +36,9 @@ run_cmd() {
 		--reboot)
 			systemctl reboot
 			;;
+		--close)
+			pkill rofi
+			;;
 		--suspend)
 			mpc -q pause
 			amixer set Master mute
@@ -42,7 +46,7 @@ run_cmd() {
 			;;
 		--logout)
 			case "$DESKTOP_SESSION" in
-				openbox)
+openbox)
 					openbox --exit
 					;;
 				bspwm)
@@ -83,5 +87,8 @@ case "${chosen}" in
         ;;
     "${logout}")
 		run_cmd --logout
+        ;;
+    "${close}")
+		run_cmd --close
         ;;
 esac
