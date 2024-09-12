@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# ble.sh
+# [[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
+
 iatest=$(expr index "$-" i)
 
 #######################################################
@@ -493,3 +497,10 @@ conda deactivate
 eval "$(thefuck --alias)"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export TERM="kitty"
+export PYTHONPATH="/home/vs/github/varcall/python/pyVarcall"
+
+
+
+# [[ ! ${BLE_VERSION-} ]] || ble-attach
+############################################################################################################################################################

@@ -13,6 +13,7 @@ dunst &
 nm-applet &
 blueman-applet &
 volumeicon &
+clipster -d &
 # /usr/local/bin/dwm
 # betterlockscreen -u /home/vs/Pictures/wallpapers/
 #while type dwm >/dev/null; do dwm && continue || break; done

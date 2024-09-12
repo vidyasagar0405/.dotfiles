@@ -10,11 +10,13 @@ alias TBjar="/home/vs/.TBtools/TBtools_JRE1.6.jar"
 alias cdwm="cd /home/vs/.config/chadwm/chadwm && sudo nvim config.h"
 alias bar.sh="sudo nvim /home/vs/.config/chadwm/scripts/bar.sh"
 alias chwall="/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/ --save"
-alias cursor="/home/vs/Apps/cursor-0.39.3-build-2408092hoyaxt9m-x86_64.AppImage"
+alias code="/usr/bin/tmux new-session -d -s my_session 'bash code'"
 alias linutil="curl -fsSL https://christitus.com/linux | sh"
 alias sx="nvim /home/vs/.config/bspwm/sxhkdrc"
 alias y="yazi"
 alias ff="fuck"
+alias setpy="source /home/vs/github/varcall/python/varcall_env/bin/activate && conda activate base && cd /home/vs/github/varcall/python/pyVarcall/"
+alias setgo="conda activate base && cd /home/vs/github/varcall/go/src/goVarcall/"
 
 #######################################################
 # GENERAL ALIAS'S
