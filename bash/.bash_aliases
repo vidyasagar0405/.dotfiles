@@ -15,7 +15,7 @@ alias linutil="curl -fsSL https://christitus.com/linux | sh"
 alias sx="nvim /home/vs/.config/bspwm/sxhkdrc"
 alias y="yazi"
 alias ff="fuck"
-alias setpy="source /home/vs/github/varcall/python/varcall_env/bin/activate && conda activate base && cd /home/vs/github/varcall/python/pyVarcall/"
+alias setpy="source /home/vs/github/varcall/python/varcall_env/bin/activate && conda activate base && cd /home/vs/github/varcall/python/varcall/"
 alias setgo="conda activate base && cd /home/vs/github/varcall/go/src/goVarcall/"
 
 #######################################################
