@@ -22,6 +22,7 @@ vim.keymap.set('i', '<C-s>', '<cmd>w<CR>')
 vim.keymap.set('n', '<C-sa>', '<cmd>wa<CR>')
 vim.keymap.set('i', '<C-sa>', '<cmd>wa<CR>')
 
+vim.keymap.set('i', '<C-c>', '<Esc>')
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
