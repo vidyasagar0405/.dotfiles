@@ -1,10 +1,10 @@
 #!/bin/sh
 input-remapper-control --command autoload --config-dir /home/vs/.config/input-remapper-2/ &
-xrdb merge ~/.Xresources 
+xrdb merge ~/.Xresources
 xbacklight -set 10 &
 /usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/
 xset r rate 200 50 &
-picom --animations -b &
+picom &
 dash ~/.config/chadwm/scripts/bar.sh &
 dbus-update-activation-environment --systemd --all &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

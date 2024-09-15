@@ -2,3 +2,4 @@
 -- Defarevealult keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 vim.keymap.set({ "n", "v", "x" }, "\\", "<cmd>Neotree toggle<CR>", { desc = "Neotree" })
+vim.keymap.set({ "n", "v", "x", "i" }, "<C-c>", "<Esc>", { desc = "mapped Control-c to Esc" })
