@@ -11,6 +11,7 @@ alias cdwm="cd /home/vs/.config/chadwm/chadwm && sudo nvim config.h"
 alias bar.sh="sudo nvim /home/vs/.config/chadwm/scripts/bar.sh"
 alias chwall="/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/ --save"
 alias code="/usr/bin/tmux new-session -d -s my_session 'bash code'"
+alias gogot="/usr/bin/tmux new-session -d -s my_session 'bash Godot_v4.2.2-stable_mono_linux.x86_64'"
 alias linutil="curl -fsSL https://christitus.com/linux | sh"
 alias sx="nvim /home/vs/.config/bspwm/sxhkdrc"
 alias y="yazi"
@@ -145,4 +146,3 @@ alias clickpaste='sleep 3; xdotool type "$(xclip -o -selection clipboard)"'
 # KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
 
 alias kssh="kitty +kitten ssh"
-

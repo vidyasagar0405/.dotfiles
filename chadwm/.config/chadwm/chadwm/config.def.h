@@ -160,7 +160,7 @@ static Key keys[] = {
     { MODKEY|ControlMask,               XK_x,       spawn,          SHCMD("gpick -so --no-newline | clipster -c") },
     { MODKEY,                           XK_d,       spawn,          SHCMD("rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi") },
     { MODKEY,                           XK_t,       spawn,          SHCMD("rofi -show window -config ~/.config/rofi/rofidmenu.rasi") },
-    { MODKEY,                           XK_Return,  spawn,          SHCMD("kitty")},
+    { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
     { MODKEY,                           XK_w,       spawn,          SHCMD("firefox")},
     { MODKEY|ControlMask,               XK_w,       spawn,          SHCMD("/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/ --save")},
     { MODKEY,                           XK_a,       spawn,          SHCMD("thunar")},
