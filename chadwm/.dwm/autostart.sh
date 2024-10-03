@@ -3,7 +3,7 @@ input-remapper-control --command autoload --config-dir /home/vs/.config/input-re
 xrdb merge ~/.Xresources
 xbacklight -set 10 &
 /usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/
-xset r rate 200 50 &
+# xset r rate 200 50 &
 picom &
 dash ~/.config/chadwm/scripts/bar.sh &
 dbus-update-activation-environment --systemd --all &
