@@ -21,6 +21,7 @@ vim.keymap.set({ "n", "i" }, "<C-s>", "<cmd>w<CR>")
 vim.keymap.set({ "n", "i" }, "<C-sa>", "<cmd>wa<CR>")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.api.nvim_set_keymap("n", "<leader>gg", ":lua Toggle_floating_lazygit()<CR>", { noremap = true, silent = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
