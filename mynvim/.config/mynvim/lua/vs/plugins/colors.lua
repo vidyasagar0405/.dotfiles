@@ -9,7 +9,7 @@ end
 return {
 
     {"erikbackman/brightburn.vim"},
-    { 
+    {
         'catppuccin/nvim',
         name = 'catppuccin',
         priority = 1000,
@@ -60,12 +60,12 @@ return {
                 indentscope_color = "",
             },
         },
-    })    
+    })
     -- setup must be called before loading
     vim.cmd.colorscheme "catppuccin"
 end
 },
-    
+
     {
         "folke/tokyonight.nvim",
         lazy = false,
@@ -138,6 +138,7 @@ end
             })
         end
     },
+    { "ellisonleao/gruvbox.nvim" },
 
 
 }

@@ -487,7 +487,6 @@ else
     fi
 fi
 unset __conda_setup
-conda deactivate
 # <<< conda initialize <<<
 
 eval "$(thefuck --alias)"
@@ -497,6 +496,8 @@ export TERM="kitty"
 export PYTHONPATH="/home/vs/github/varcall/python/varcall"
 export NXF_VER=24.04.4
 export PATH=$PATH:/usr/local/go/bin
+
+setuppy
 
 # [[ ! ${BLE_VERSION-} ]] || ble-attach
 ############################################################################################################################################################

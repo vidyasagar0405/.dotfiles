@@ -19,7 +19,13 @@ return{
         vim.keymap.set("n", "<leader>$", function() require("harpoon.mark").set_current_at(4) end, { desc = "Add file to harpoon 4" })
         vim.keymap.set("n", "<leader>%", function() require("harpoon.mark").set_current_at(5) end, { desc = "Add file to harpoon 5" })
 
-        vim.keymap.set("n", "<leader>c1", function() require("harpoon.tmux").sendCommand(1, 1) end, { desc = "Send command 1 to tmux 1 harpoon" })
+        vim.keymap.set("n", "<leader>c1", function() require("harpoon.tmux").sendCommand(2, 1) end, { desc = "Send command 1 to tmux 2 harpoon" })
 
-    end
+    end,
+    opts = {
+        global_settings = {
+            -- sets harpoon to run the command immediately as it's passed to the terminal when calling `sendCommand`.
+            enter_on_sendcmd = true,
+        },
+    }
 }

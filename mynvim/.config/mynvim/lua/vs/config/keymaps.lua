@@ -23,10 +23,10 @@ vim.keymap.set({ "i", "x", "n", "s" }, "<C-sa>", "<cmd>wa<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Move lines up ro down
-vim.keymap.set("n", "J", "<cmd>m .+1<cr>==", { desc = "Move Down" })
-vim.keymap.set("n", "K", "<cmd>m .-2<cr>==", { desc = "Move Up" })
-vim.keymap.set("i", "J", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-vim.keymap.set("i", "K", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+-- vim.keymap.set("n", "J", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+-- vim.keymap.set("n", "K", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+-- vim.keymap.set("i", "J", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+-- vim.keymap.set("i", "K", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
@@ -49,3 +49,7 @@ vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 -- better indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+
+vim.api.nvim_set_keymap("n", "<leader>vv", "<cmd>lua Varcall()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true })
