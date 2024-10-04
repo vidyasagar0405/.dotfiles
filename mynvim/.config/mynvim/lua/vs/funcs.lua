@@ -27,6 +27,11 @@ local varcall = Terminal:new({
     close_on_exit = true,
 })
 
+-- local float_terminal = Terminal:new({
+--     display_name = "Terminal",
+--     direction = "float",
+-- })
+
 function Lazygit_toggle()
     lazygit:toggle()
 end
@@ -34,6 +39,12 @@ end
 function Varcall()
     varcall:toggle()
 end
+
+-- function Floating_terminal()
+--     float_terminal:toggle()
+-- end
+
+
 -- Current keymaps active in config/keymaps.lua
 -- vim.api.nvim_set_keymap("n", "<leader>vv", "<cmd>lua Varcall()<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true })

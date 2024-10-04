@@ -53,3 +53,6 @@ vim.keymap.set("v", ">", ">gv")
 
 vim.api.nvim_set_keymap("n", "<leader>vv", "<cmd>lua Varcall()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>lua Floating_terminal()<CR>", { noremap = true })
+
+vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float name=Termianl<CR>", { desc = "Toggle Floating Terminal" })

@@ -19,7 +19,9 @@ return{
         vim.keymap.set("n", "<leader>$", function() require("harpoon.mark").set_current_at(4) end, { desc = "Add file to harpoon 4" })
         vim.keymap.set("n", "<leader>%", function() require("harpoon.mark").set_current_at(5) end, { desc = "Add file to harpoon 5" })
 
-        vim.keymap.set("n", "<leader>c1", function() require("harpoon.tmux").sendCommand(2, 1) end, { desc = "Send command 1 to tmux 2 harpoon" })
+        -- vim.keymap.set("n", "<leader>c1", function() require("harpoon.tmux").sendCommand(2, 1) end, { desc = "Send command 1 to tmux 2 harpoon" })
+
+        vim.keymap.set('n', '<leader>hh', function () require('harpoon.dirlist').toggle_quick_list() end, { noremap = true, silent = true })
 
     end,
     opts = {
