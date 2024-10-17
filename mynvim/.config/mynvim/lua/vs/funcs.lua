@@ -5,7 +5,7 @@ local lazygit = Terminal:new({
     dir = "git_dir",
     direction = "float",
     float_opts = {
-        border = "double",
+        border = "rounded",
     },
     -- function to run on opening the terminal
     on_open = function(term)
@@ -20,7 +20,7 @@ local lazygit = Terminal:new({
 
 
 local varcall = Terminal:new({
-    cmd = "python /home/vs/github/varcall/python/varcall/src/main.py",
+    cmd = "textual run --dev /home/vs/github/varcall/python/varcall/src/main.py",
     direction = "float",
     display_name = "varcall",
     dir = "/home/vs/github/varcall/python/varcall",
@@ -44,7 +44,28 @@ end
 --     float_terminal:toggle()
 -- end
 
+--[[
+    Current keymaps active in config/keymaps.lua
+    vim.api.nvim_set_keymap("n", "<leader>vv", "<cmd>lua Varcall()<CR>", { noremap = true })
+    vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true })
+--]]
 
--- Current keymaps active in config/keymaps.lua
--- vim.api.nvim_set_keymap("n", "<leader>vv", "<cmd>lua Varcall()<CR>", { noremap = true })
--- vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true })
+
+function GoTest(bufnr)
+    local group = vim.api.nvim_create_augroup("GoTest", {clear = true})
+    vim.fn.jobstart("go test", {
+        stdout_buffered = true,
+        on_stdout = function (_, data)
+            if data then
+                vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, data)
+            end
+        end,
+        on_stderr = function (_, data)
+            if data then
+                vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, data)
+            end
+        end,
+    })
+end
+--
+-- vim.keymap.set("n", "<leader>got", "<cmd>lua GoTest()<CR>")

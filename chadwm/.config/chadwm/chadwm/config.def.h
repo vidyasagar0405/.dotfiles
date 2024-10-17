@@ -126,7 +126,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
     { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
     { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -153,14 +153,15 @@ static Key keys[] = {
 
     // screenshot fullscreen and cropped
     {ControlMask,                XK_Print,       spawn,
-         SHCMD("maim | xclip -selection clipboard -t image/png && maim ~/Pictures/$(date +%s).png")},
+        SHCMD("maim | xclip -selection clipboard -t image/png && maim ~/Pictures/$(date +%s).png")},
     {0,                            XK_Print,       spawn,
-         SHCMD("maim --select | xclip -selection clipboard -t image/png && maim ~/Pictures/$(date +%s).png")},
+        SHCMD("maim --select | xclip -selection clipboard -t image/png && maim ~/Pictures/$(date +%s).png")},
 
     { MODKEY|ControlMask,               XK_x,       spawn,          SHCMD("gpick -so --no-newline | clipster -c") },
     { MODKEY,                           XK_d,       spawn,          SHCMD("rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi") },
     { MODKEY,                           XK_t,       spawn,          SHCMD("rofi -show window -config ~/.config/rofi/rofidmenu.rasi") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
+    { Mod1Mask,                           XK_Return,  spawn,          SHCMD("alacritty")},
     { MODKEY,                           XK_w,       spawn,          SHCMD("firefox")},
     { MODKEY|ControlMask,               XK_w,       spawn,          SHCMD("/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/ --save")},
     { MODKEY,                           XK_a,       spawn,          SHCMD("thunar")},

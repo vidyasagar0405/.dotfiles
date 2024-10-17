@@ -22,6 +22,16 @@ vim.keymap.set({ "i", "x", "n", "s" }, "<C-sa>", "<cmd>wa<CR>")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+-- Stolen from the Primeagen
+    -- greatest remap ever
+    vim.keymap.set("x", "<leader>p", [["_dP]])
+
+    -- next greatest remap ever : asbjornHaland
+    -- vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+    -- vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+    vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+
 -- Move lines up ro down
 -- vim.keymap.set("n", "J", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 -- vim.keymap.set("n", "K", "<cmd>m .-2<cr>==", { desc = "Move Up" })

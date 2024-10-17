@@ -15,6 +15,10 @@ return {
 
         -- Add your own debuggers here
         'leoluz/nvim-dap-go',
+
+        -- From Tj_deVris vids
+        'nvim-telescope/telescope-dap.nvim',
+        'theHamsta/nvim-dap-virtual-text',
     },
     config = function()
         local dapui = require 'dapui'
@@ -27,6 +31,28 @@ return {
                 program = "${file}";
                 pythonPath = function()
                     return '/usr/bin/python'
+                end;
+            },
+        }
+        dap.configurations.lua = {
+            {
+                type = 'lua';
+                request = 'launch';
+                name = "Launch file";
+                program = "${file}";
+                pythonPath = function()
+                    return '/usr/bin/lua'
+                end;
+            },
+        }
+        dap.configurations.go = {
+            {
+                type = 'go';
+                request = 'launch';
+                name = "Launch file";
+                program = "${file}";
+                pythonPath = function()
+                    return '/usr/bin/go'
                 end;
             },
         }
@@ -43,7 +69,7 @@ return {
             -- online, please don't ask me how to install them :)
             ensure_installed = {
                 -- Update this to ensure that you have the debuggers for the langs you want
-                'delve',
+                -- 'delve',
             },
         }
 
