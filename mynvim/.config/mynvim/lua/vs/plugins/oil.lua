@@ -6,17 +6,17 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     config = function ()
 
-        vim.keymap.set("n", "<leader>e", "<cmd>Oil --float<CR>", { desc = "Open Oil flaoting window" })
-        vim.keymap.set("n", "\\", "<cmd>Oil --float<CR>", { desc = "Open Oil flaoting window" })
-        vim.keymap.set("n", "<leader>E", "<cmd>Oil<CR>", { desc = "Open Oil buffer" })
+        vim.keymap.set("n", "<leader>e", "<cmd>Oil . --float <CR>", { desc = "Open Oil flaoting window" })
+        vim.keymap.set("n", "\\", "<cmd>Oil . --float<CR>", { desc = "Open Oil flaoting window" })
+        vim.keymap.set("n", "<leader>E", "<cmd>Oil --float<CR>", { desc = "Open Oil buffer" })
 
         require("oil").setup({
             default_file_explorer = true,
             columns = {
                 "icon",
                 "permissions",
-                "size",
-                "mtime",
+                -- "size",
+                -- "mtime",
             },
             -- Buffer-local options to use for oil buffers
             buf_options = {

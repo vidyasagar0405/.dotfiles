@@ -96,3 +96,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 --         vim.cmd("wa")
 --     end
 -- })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    desc = "color column",
+    pattern = {"*py", "*go"},
+    group = vim.api.nvim_create_augroup("color column", { clear = true }),
+    callback = function ()
+        vim.opt.colorcolumn = "80"
+    end
+})
