@@ -7,7 +7,7 @@ return {
     config = function ()
 
         vim.keymap.set("n", "<leader>e", "<cmd>Oil . --float <CR>", { desc = "Open Oil flaoting window" })
-        vim.keymap.set("n", "\\", "<cmd>Oil . --float<CR>", { desc = "Open Oil flaoting window" })
+        -- vim.keymap.set("n", "\\", "<cmd>Oil . --float<CR>", { desc = "Open Oil flaoting window" })
         vim.keymap.set("n", "<leader>E", "<cmd>Oil --float<CR>", { desc = "Open Oil buffer" })
 
         require("oil").setup({
