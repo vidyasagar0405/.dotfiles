@@ -32,6 +32,11 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
     vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
+    -- resolve conflicts in fugitive
+    vim.keymap.set("n", "gl", "<cmd>diffget //2<cr>", { desc = "grabs the changes on the right" })
+    vim.keymap.set("n", "gh", "<cmd>diffget //3<cr>", { desc = "grabs the changes on the left" })
+
+
 -- Move lines up ro down
 -- vim.keymap.set("n", "J", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 -- vim.keymap.set("n", "K", "<cmd>m .-2<cr>==", { desc = "Move Up" })
