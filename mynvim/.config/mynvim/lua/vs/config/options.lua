@@ -60,4 +60,4 @@ vim.opt.expandtab = true
 
 -- vim.opt.colorcolumn = "80"
 
-vim.g.bigfile_size = 1024 * 1024 * 1.5 -- 1.5 MB
+vim.g.bigfile_size = 1024 * 1024 * 0.5 -- 500kb

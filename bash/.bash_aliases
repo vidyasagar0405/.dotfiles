@@ -16,8 +16,12 @@ alias linutil="curl -fsSL https://christitus.com/linux | sh"
 alias sx="nvim /home/vs/.config/bspwm/sxhkdrc"
 alias y="yazi"
 alias ff="fuck"
-alias setuppy="source /home/vs/github/varcall/python/varcall_env/bin/activate && conda activate base && cd /home/vs/github/varcall/python/varcall/"
+alias setuppy="source /home/vs/github.com/varcall_env/bin/activate && conda activate base && cd /home/vs/github.com/vidyasagar0405/varcall/"
 alias setupgo="conda activate base && cd /home/vs/github/varcall/go/src/goVarcall/"
+
+# Git alias:
+alias gs="git status"
+
 
 #######################################################
 # GENERAL ALIAS'S

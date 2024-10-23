@@ -198,10 +198,10 @@ conda config --set changeps1 false
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export TERM="kitty"
-export PYTHONPATH="/home/vs/github/varcall/python/varcall"
+export PYTHONPATH="/home/vs/github.com/vidyasagar0405/varcall"
 export NXF_VER=24.04.4
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.config/emacs/bin
 export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
 
-source /home/vs/github/varcall/python/varcall_env/bin/activate
+source /home/vs/github.com/varcall_env/bin/activate

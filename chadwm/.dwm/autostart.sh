@@ -1,5 +1,6 @@
 #!/bin/sh
 input-remapper-control --command autoload --config-dir /home/vs/.config/input-remapper-2/ &
+systemctl --user start xremap.service
 xrdb merge ~/.Xresources
 xbacklight -set 10 &
 /usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/
