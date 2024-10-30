@@ -497,7 +497,7 @@ eval "$(thefuck --alias)"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export TERM="kitty"
-export PYTHONPATH="/home/vs/github.com/vidyasagar0405/varcall/"
+# export PYTHONPATH="/home/vs/github.com/vidyasagar0405/varcall/"
 export NXF_VER=24.04.4
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.config/emacs/bin
@@ -508,3 +508,5 @@ setuppy
 
 # [[ ! ${BLE_VERSION-} ]] || ble-attach
 ############################################################################################################################################################
+
+. /opt/asdf-vm/asdf.sh

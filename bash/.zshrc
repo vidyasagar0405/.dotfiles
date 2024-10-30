@@ -121,7 +121,8 @@ setopt hist_find_no_dups
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git
+    asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -198,10 +199,12 @@ conda config --set changeps1 false
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export TERM="kitty"
-export PYTHONPATH="/home/vs/github.com/vidyasagar0405/varcall"
+# export PYTHONPATH="/home/vs/github.com/vidyasagar0405/varcall"
 export NXF_VER=24.04.4
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.config/emacs/bin
 export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
 
 source /home/vs/github.com/varcall_env/bin/activate
+
+. /opt/asdf-vm/asdf.sh
