@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export EDITOR='nvim'
 export VISUAL="${EDITOR}"
-export BROWSER='firefox'
+export BROWSER='brave'
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
 if [ -d "$HOME/.local/bin" ] ;
@@ -121,8 +121,9 @@ setopt hist_find_no_dups
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-    asdf)
+plugins=(
+    git
+    )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -193,18 +194,18 @@ else
     fi
 fi
 unset __conda_setup
-conda config --set changeps1 false
 # <<< conda initialize <<<
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export TERM="kitty"
+export TERM='xterm-kitty'
 # export PYTHONPATH="/home/vs/github.com/vidyasagar0405/varcall"
 export NXF_VER=24.04.4
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.config/emacs/bin
 export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
 
-source /home/vs/github.com/varcall_env/bin/activate
+# source /home/vs/github.com/varcall_env/bin/activate  # commented out by conda initialize
 
 . /opt/asdf-vm/asdf.sh
+export PATH=/home/vs/edirect:${PATH}

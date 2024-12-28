@@ -20,6 +20,9 @@ alias setuppy="source /home/vs/github.com/varcall_env/bin/activate && conda acti
 alias setupgo="conda activate base && cd /home/vs/github/varcall/go/src/goVarcall/"
 alias music='ncmpcpp'
 
+alias lazyvim="NVIM_APPNAME=lazyvim nvim"
+alias lazynvim="NVIM_APPNAME=lazyvim nvim"
+
 # Git alias:
 alias gs="git status"
 

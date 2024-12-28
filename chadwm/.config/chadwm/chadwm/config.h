@@ -160,13 +160,13 @@ static Key keys[] = {
     { MODKEY|ControlMask,               XK_x,       spawn,          SHCMD("gpick -so --no-newline | clipster -c") },
     { MODKEY,                           XK_d,       spawn,          SHCMD("rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi") },
     { MODKEY,                           XK_t,       spawn,          SHCMD("rofi -show window -config ~/.config/rofi/rofidmenu.rasi") },
-    { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
-    { Mod1Mask,                         XK_Return,  spawn,          SHCMD("alacritty")},
-    { MODKEY,                           XK_w,       spawn,          SHCMD("firefox")},
+    { MODKEY,                           XK_Return,  spawn,          SHCMD("kitty")},
+    { Mod1Mask,                         XK_Return,  spawn,          SHCMD("kitty")},
+    { MODKEY,                           XK_w,       spawn,          SHCMD("brave")},
     { MODKEY|ControlMask,               XK_w,       spawn,          SHCMD("/usr/bin/nitrogen --set-zoom-fill --random /home/vs/Pictures/wallpapers/ --save")},
     { MODKEY,                           XK_a,       spawn,          SHCMD("thunar")},
     { MODKEY|ShiftMask,                 XK_c,       spawn,          SHCMD("rofi -modi clipboard:greenclip print -show clipboard -config ~/.config/rofi/rofidmenu.rasi")},
-    { MODKEY,                           XK_e,       spawn,          SHCMD("doom +everywhere")},
+    /*{ MODKEY,                           XK_e,       spawn,          SHCMD("emacsclient --eval '(emacs-everywhere)'")},*/
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
@@ -248,8 +248,8 @@ static Key keys[] = {
     { MODKEY|ShiftMask,                 XK_r,       restart,           {0} },
 
     // hide & restore windows
-    { MODKEY,                           XK_h,       hidewin,        {0} },
-    { MODKEY|ShiftMask,                 XK_h,       restorewin,     {0} },
+    { MODKEY,                           XK_e,       hidewin,        {0} },
+    { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
 
     TAGKEYS(                            XK_1,                       0)
     TAGKEYS(                            XK_2,                       1)

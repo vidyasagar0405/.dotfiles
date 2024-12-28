@@ -496,7 +496,7 @@ unset __conda_setup
 eval "$(thefuck --alias)"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export TERM="kitty"
+export TERM='xterm-kitty'
 # export PYTHONPATH="/home/vs/github.com/vidyasagar0405/varcall/"
 export NXF_VER=24.04.4
 export PATH=$PATH:/usr/local/go/bin
@@ -510,3 +510,4 @@ setuppy
 ############################################################################################################################################################
 
 . /opt/asdf-vm/asdf.sh
+export PATH=/home/vs/edirect:${PATH}
