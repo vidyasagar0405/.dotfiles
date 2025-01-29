@@ -41,8 +41,8 @@ fi
 if [[ $iatest -gt 0 ]]; then bind "set bell-style visible"; fi
 
 # Expand the history size
-export HISTFILESIZE=10000
-export HISTSIZE=5000
+export HISTFILESIZE=500000
+export HISTSIZE=500000
 
 # Don't put duplicate lines in the history and do not add lines that start with a space
 export HISTCONTROL=erasedups:ignoredups:ignorespace
@@ -511,3 +511,6 @@ setuppy
 
 . /opt/asdf-vm/asdf.sh
 export PATH=/home/vs/edirect:${PATH}
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"

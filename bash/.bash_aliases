@@ -19,6 +19,7 @@ alias ff="fuck"
 alias setuppy="source /home/vs/github.com/varcall_env/bin/activate && conda activate base && cd /home/vs/github.com/vidyasagar0405/varcall/"
 alias setupgo="conda activate base && cd /home/vs/github/varcall/go/src/goVarcall/"
 alias music='ncmpcpp'
+alias xsh='chmod +x *.sh'
 
 alias lazyvim="NVIM_APPNAME=lazyvim nvim"
 alias lazynvim="NVIM_APPNAME=lazyvim nvim"

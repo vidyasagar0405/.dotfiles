@@ -99,8 +99,8 @@ ENABLE_CORRECTION="true"
 # see 'man strftime' for details.
 
 HISTFILE=~/.config/zsh/zhistory
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=500000
+SAVEHIST=500000
 HISTDUP=erase
 HISTCONTROL=erasedups:ignoredups:ignorespace
 HISTTIMEFORMAT="%Y-%m-%d %T "
@@ -209,3 +209,8 @@ export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
 
 . /opt/asdf-vm/asdf.sh
 export PATH=/home/vs/edirect:${PATH}
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
