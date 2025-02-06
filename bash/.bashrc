@@ -514,3 +514,4 @@ export PATH=/home/vs/edirect:${PATH}
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
+export TOWER_ACCESS_TOKEN=eyJ0aWQiOiAxMDgzOX0uYWFiMGM0NTAwNzE3MDc1NDU4NTFjOWNiYTQyYmQ0M2NmN2JlNDdjYQ==

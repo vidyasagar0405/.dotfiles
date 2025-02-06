@@ -214,3 +214,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+export TOWER_ACCESS_TOKEN=eyJ0aWQiOiAxMDgzOX0uYWFiMGM0NTAwNzE3MDc1NDU4NTFjOWNiYTQyYmQ0M2NmN2JlNDdjYQ==
+
+PATH="/home/vs/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/vs/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/vs/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/vs/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/vs/perl5"; export PERL_MM_OPT;
