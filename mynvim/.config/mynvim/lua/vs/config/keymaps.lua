@@ -79,3 +79,11 @@ vim.keymap.set('n', '<leader>xp', function()
   vim.cmd('term python3 ' .. file) -- Run the Python file in the terminal
   vim.cmd('startinsert') -- Start in insert mode in the terminal
 end, { noremap = true, silent = true, desc = "Run Python file in split" })
+
+vim.keymap.set('n', '<leader>xg', function()
+  vim.cmd('write') -- Open a vertical split
+  local file = vim.fn.expand('%:p') -- Get the full path of the current file
+  vim.cmd('vsplit') -- Open a vertical split
+  vim.cmd('term go build ' .. file) -- Run the Python file in the terminal
+  vim.cmd('startinsert') -- Start in insert mode in the terminal
+end, { noremap = true, silent = true, desc = "Run Python file in split" })
