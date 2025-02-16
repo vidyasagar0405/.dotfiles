@@ -27,6 +27,10 @@ alias lazynvim="NVIM_APPNAME=lazyvim nvim"
 # Git alias:
 alias gs="git status"
 
+## view stuff in readable format
+alias view_csv='column -s, -t'
+alias view_tsv='column -s $'\t' -t'
+alias view_xml="sed 's/></>\n</g'"
 
 #######################################################
 # GENERAL ALIAS'S
