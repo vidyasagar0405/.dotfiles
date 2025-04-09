@@ -161,8 +161,8 @@ alias ls='ls -aFh --color=always' # add colors and file type extensions
 alias l='ls'
 
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
-#  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
-#  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴ 
+#  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │
+#  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴
 
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 eval "$(starship init zsh)"
@@ -214,10 +214,27 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
-export ***REMOVED***
+export TOWER_ACCESS_TOKEN=eyJ0aWQiOiAxMDgzOX0uYWFiMGM0NTAwNzE3MDc1NDU4NTFjOWNiYTQyYmQ0M2NmN2JlNDdjYQ==
 
 PATH="/home/vs/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/vs/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/vs/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/vs/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/vs/perl5"; export PERL_MM_OPT;
+
+# Created by `userpath` on 2025-03-20 10:40:57
+export PATH="$PATH:/home/vs/.local/share/hatch/pythons/3.10/python/bin"
+export BIOINFO_SCRIPTS="/home/vs/github.com/vidyasagar0405/bioinfo-scripts"
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/home/vs/y/micromamba';
+export MAMBA_ROOT_PREFIX='/home/vs/y';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<

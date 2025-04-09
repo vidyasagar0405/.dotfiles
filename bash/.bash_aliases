@@ -21,8 +21,11 @@ alias setupgo="conda activate base && cd /home/vs/github/varcall/go/src/goVarcal
 alias music='ncmpcpp'
 alias xsh='chmod +x *.sh'
 
-alias lazyvim="NVIM_APPNAME=lazyvim nvim"
-alias lazynvim="NVIM_APPNAME=lazyvim nvim"
+alias lazynvim="NVIM_APPNAME=lazynvim nvim"
+alias lv="NVIM_APPNAME=lazynvim nvim"
+alias spyder="QT_STYLE_OVERRIDE=Fusion spyder"
+
+alias p="python"
 
 # Git alias:
 alias gs="git status"
@@ -112,7 +115,7 @@ alias 777='chmod -R 777'
 alias h="history | grep "
 
 # Search running processes
-alias p="ps aux | grep "
+alias pg="ps aux | grep "
 alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
 # Search files in the current folder

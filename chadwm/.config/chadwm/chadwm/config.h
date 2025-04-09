@@ -94,6 +94,7 @@ static const Rule rules[] = {
     { "pavucontrol",        NULL,       NULL,       0,            0,           1,           -1 },
     { "Blueman-manager",    NULL,       NULL,       0,            0,           1,           -1 },
     { "mpv",                NULL,       NULL,       0,            0,           1,           -1 },
+    { "Maze-solver",        NULL,      "Maze-solver",       0,            0,           1,           -1 },
 };
 
 /* layout(s) */
@@ -141,12 +142,14 @@ static const Layout layouts[] = {
 static Key keys[] = {
     /* modifier                         key         function        argument */
 
-    // brightness and audio 
+    // brightness and audio
     {0,                     XF86XK_AudioMute,       spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh volume_mute")},
     {0,              XF86XK_AudioRaiseVolume,       spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh volume_up")},
     {0,              XF86XK_AudioLowerVolume,       spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh volume_down")},
     {0,              XF86XK_MonBrightnessDown,      spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh brightness_down")},
     {0,              XF86XK_MonBrightnessUp,        spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh brightness_up")},
+    {0,              XK_F3,                         spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh brightness_down")},
+    {0,              XK_F4,                         spawn,          SHCMD("~/.config/i3/scripts/volume_brightness.sh brightness_up")},
     {0,              XF86XK_AudioPlay,	            spawn,          SHCMD("playerctl play-pause")},
     {0,              XF86XK_AudioNext,              spawn,          SHCMD("playerctl next")},
     {0,              XF86XK_AudioPrev,              spawn,          SHCMD("playerctl previous")},
@@ -180,7 +183,7 @@ static Key keys[] = {
     { MODKEY,                           XK_i,       incnmaster,     {.i = +1 } },
     { MODKEY,                           XK_d,       incnmaster,     {.i = -1 } },
 
-    // change m,cfact sizes 
+    // change m,cfact sizes
     { MODKEY,                           XK_h,       setmfact,       {.f = -0.05} },
     { MODKEY,                           XK_l,       setmfact,       {.f = +0.05} },
     { MODKEY|ShiftMask,                 XK_h,       setcfact,       {.f = +0.25} },
@@ -205,7 +208,7 @@ static Key keys[] = {
     { MODKEY|ControlMask,               XK_o,       incrogaps,      {.i = +1 } },
     { MODKEY|ControlMask|ShiftMask,     XK_o,       incrogaps,      {.i = -1 } },
 
-    // inner+outer hori, vert gaps 
+    // inner+outer hori, vert gaps
     { MODKEY|ControlMask,               XK_6,       incrihgaps,     {.i = +1 } },
     { MODKEY|ControlMask|ShiftMask,     XK_6,       incrihgaps,     {.i = -1 } },
     { MODKEY|ControlMask,               XK_7,       incrivgaps,     {.i = +1 } },
