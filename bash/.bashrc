@@ -491,8 +491,6 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
 setuppy
 
-# [[ ! ${BLE_VERSION-} ]] || ble-attach
-############################################################################################################################################################
 
 . /opt/asdf-vm/asdf.sh
 export PATH=/home/vs/edirect:${PATH}

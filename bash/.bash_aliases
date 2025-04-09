@@ -27,6 +27,8 @@ alias spyder="QT_STYLE_OVERRIDE=Fusion spyder"
 
 alias p="python"
 
+alias clear_trash="\rm -rf ~/.local/share/Trash/files"
+
 # Git alias:
 alias gs="git status"
 

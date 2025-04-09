@@ -171,19 +171,6 @@ return {
 				--------------------------------------------------------------------------------
 				--- Nextflow
 				--------------------------------------------------------------------------------
-				nextflow_ls = {
-					filetypes = { "nextflow" },
-					root_dir = util.root_pattern("nextflow.config", ".git"),
-					capabilities = vim.lsp.protocol.make_client_capabilities(),
-					settings = {
-						nextflow = {
-							files = {
-								exclude = { ".git", ".nf-test", "work" },
-							},
-						},
-					},
-				},
-
 				-- rust_analyzer = {},
 
 				--------------------------------------------------------------------------------
@@ -237,6 +224,25 @@ return {
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 						require("lspconfig")[server_name].setup(server)
 					end,
+				},
+			})
+
+			-- Configure nextflow_ls separately since it's not available in Mason
+			require("lspconfig").nextflow_ls.setup({
+				cmd = {
+					"/usr/lib/jvm/java-17-openjdk/bin/java",
+					"-jar",
+					vim.fn.expand("~/.local/share/nvim/mason/packages/nextflow-language-server/language-server-all.jar"),
+				},
+				filetypes = { "nextflow" },
+				root_dir = util.root_pattern("nextflow.config", ".git"),
+				capabilities = vim.lsp.protocol.make_client_capabilities(),
+				settings = {
+					nextflow = {
+						files = {
+							exclude = { ".git", ".nf-test", "work" },
+						},
+					},
 				},
 			})
 		end,
