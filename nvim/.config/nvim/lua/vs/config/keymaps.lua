@@ -23,19 +23,18 @@ vim.keymap.set({ "i", "x", "n", "s" }, "<C-sa>", "<cmd>wa<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Stolen from the Primeagen
-    -- greatest remap ever
-    vim.keymap.set("x", "<leader>p", [["_dP]])
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
-    -- next greatest remap ever : asbjornHaland
-    -- vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-    -- vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- next greatest remap ever : asbjornHaland
+-- vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+-- vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-    vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
-    -- resolve conflicts in fugitive
-    vim.keymap.set("n", "gl", "<cmd>diffget //2<cr>", { desc = "grabs the changes on the right" })
-    vim.keymap.set("n", "gh", "<cmd>diffget //3<cr>", { desc = "grabs the changes on the left" })
-
+-- resolve conflicts in fugitive
+vim.keymap.set("n", "gl", "<cmd>diffget //2<cr>", { desc = "grabs the changes on the right" })
+vim.keymap.set("n", "gh", "<cmd>diffget //3<cr>", { desc = "grabs the changes on the left" })
 
 -- Move lines up ro down
 -- vim.keymap.set("n", "J", "<cmd>m .+1<cr>==", { desc = "Move Down" })
@@ -48,12 +47,10 @@ vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 -- Append next line to current and go to front
 -- vim.keymap.set("n", "J", "<cmd>join!<cr>==", { desc = "Move Down" })
 
-
 -- Buffers
 vim.keymap.set("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-
 
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
@@ -62,39 +59,50 @@ vim.keymap.set("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 
-
-
 -- better indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
-
 
 vim.api.nvim_set_keymap("n", "<leader>vv", "<cmd>lua Varcall()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>lua Floating_terminal()<CR>", { noremap = true })
 
-vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float name=Termianl<CR>", { desc = "Toggle Floating Terminal" })
+vim.keymap.set(
+	"n",
+	"<leader>tt",
+	"<cmd>ToggleTerm direction=float name=Termianl<CR>",
+	{ desc = "Toggle Floating Terminal" }
+)
 
-vim.keymap.set('n', '<leader>xp', function()
-  vim.cmd('write') -- Open a vertical split
-  local file = vim.fn.expand('%:p') -- Get the full path of the current file
-  vim.cmd('vsplit') -- Open a vertical split
-  vim.cmd('term python3 ' .. file) -- Run the Python file in the terminal
-  vim.cmd('startinsert') -- Start in insert mode in the terminal
+vim.keymap.set("n", "<leader>xp", function()
+	vim.cmd("write") -- Open a vertical split
+	local file = vim.fn.expand("%:p") -- Get the full path of the current file
+	vim.cmd("vsplit") -- Open a vertical split
+	vim.cmd("term python3 " .. file) -- Run the Python file in the terminal
+	vim.cmd("startinsert") -- Start in insert mode in the terminal
 end, { noremap = true, silent = true, desc = "Run Python file in split" })
 
-vim.keymap.set('n', '<leader>xg', function()
-  vim.cmd('write') -- Open a vertical split
-  local file = vim.fn.expand('%:p') -- Get the full path of the current file
-  vim.cmd('vsplit') -- Open a vertical split
-  vim.cmd('term go test ' .. file) -- Run the Python file in the terminal
-  vim.cmd('startinsert') -- Start in insert mode in the terminal
+vim.keymap.set("n", "<leader>xg", function()
+	vim.cmd("write") -- Open a vertical split
+	local file = vim.fn.expand("%:p") -- Get the full path of the current file
+	vim.cmd("vsplit") -- Open a vertical split
+	vim.cmd("term go run " .. file) -- Run the Python file in the terminal
+	vim.cmd("startinsert") -- Start in insert mode in the terminal
 end, { noremap = true, silent = true, desc = "Run go file in split" })
 
-vim.keymap.set('n', '<leader>xb', function()
-  vim.cmd('write') -- Open a vertical split
-  local file = vim.fn.expand('%:p') -- Get the full path of the current file
-  vim.cmd('vsplit') -- Open a vertical split
-  vim.cmd('term bash ' .. file) -- Run the Python file in the terminal
-  vim.cmd('startinsert') -- Start in insert mode in the terminal
+vim.keymap.set("n", "<leader>xb", function()
+	vim.cmd("write") -- Open a vertical split
+	local file = vim.fn.expand("%:p") -- Get the full path of the current file
+	vim.cmd("vsplit") -- Open a vertical split
+	vim.cmd("term bash " .. file) -- Run the Python file in the terminal
+	vim.cmd("startinsert") -- Start in insert mode in the terminal
+end, { noremap = true, silent = true, desc = "Run bash file in split" })
+
+
+vim.keymap.set("n", "<leader>xh", function()
+	vim.cmd("write") -- Open a vertical split
+	local file = vim.fn.expand("%:p") -- Get the full path of the current file
+	vim.cmd("vsplit") -- Open a vertical split
+	vim.cmd("term ghci-9.12.2 " .. file) -- Run the Python file in the terminal
+	vim.cmd("startinsert") -- Start in insert mode in the terminal
 end, { noremap = true, silent = true, desc = "Run bash file in split" })

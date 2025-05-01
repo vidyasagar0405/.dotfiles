@@ -1,3 +1,9 @@
+vim.cmd([[
+  function! OpenMarkdownPreview(url)
+    execute "silent ! brave --new-window " . a:url
+  endfunction
+]])
+
 return {
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
@@ -46,16 +52,20 @@ return {
 			vim.g.mkdp_open_to_the_world = 0
 			vim.g.mkdp_open_ip = ""
 			vim.g.mkdp_echo_preview_url = 0
-			vim.g.mkdp_browserfunc = ""
+			vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
 			vim.g.mkdp_markdown_css = ""
 			vim.g.mkdp_highlight_css = ""
 			vim.g.mkdp_port = ""
 			vim.g.mkdp_page_title = "「${name}」"
-			vim.g.mkdp_images_path = "/home/user/.markdown_images"
+			vim.g.mkdp_images_path = "/home/vs/.markdown_images"
 			vim.g.mkdp_filetypes = { "markdown" }
 			vim.g.mkdp_theme = "dark"
 			vim.g.mkdp_combine_preview = 0
 			vim.g.mkdp_combine_preview_auto_refresh = 1
+
+			vim.keymap.set("n", "<leader>p", function()
+				vim.cmd("MarkdownPreview")
+			end, { desc = "Add file to harpoon" })
 		end,
 	},
 }

@@ -34,6 +34,10 @@ return {
 			--  into multiple repos for maintenance purposes.
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
+
+			-- For Tailwind CSS
+			"tailwind-tools",
+			"onsails/lspkind-nvim",
 		},
 		config = function()
 			-- See `:help cmp`
@@ -55,25 +59,25 @@ return {
 				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
 					-- Select the [n]ext item
-					-- ["<C-n>"] = cmp.mapping.select_next_item(),
-					['<Tab>'] = cmp.mapping.select_next_item(),
+					-- ["<M-n>"] = cmp.mapping.select_next_item(),
+					["<Tab>"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item
-					-- ["<C-p>"] = cmp.mapping.select_prev_item(),
-          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+					-- ["<M-p>"] = cmp.mapping.select_prev_item(),
+					["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
 					-- Scroll the documentation window [b]ack / [f]orward
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
+					["<M-b>"] = cmp.mapping.scroll_docs(-4),
+					["<M-f>"] = cmp.mapping.scroll_docs(4),
 
 					-- Accept ([y]es) the completion.
 					--  This will auto-import if your LSP supports it.
 					--  This will expand snippets if the LSP sent a snippet.
-					-- ["<leader>y"] = cmp.mapping.confirm({ select = true }),
-					['<CR>'] = cmp.mapping.confirm { select = true },
+					-- ["<M-y>"] = cmp.mapping.confirm({ select = true }),
+					-- ['<Tab>'] = cmp.mapping.confirm { select = true },
 
 					-- If you prefer more traditional completion keymaps,
 					-- you can uncomment the following lines
-					--['<CR>'] = cmp.mapping.confirm { select = true },
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					--['<Tab>'] = cmp.mapping.select_next_item(),
 					--['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
@@ -115,12 +119,27 @@ return {
 					{ name = "path" },
 					{ name = "render-markdown" },
 				},
-				-- window = {
-				--   completion = cmp.config.window.bordered(),
-				--   documentation = cmp.config.window.bordered(),
-				-- }
+				window = {
+					completion = { -- rounded border; thin-style scrollbar
+						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+					},
+					documentation = { -- rounded border; thin-style scrollbar
+						border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+						winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+					},
+				},
 			})
 		end,
+		-- opts = function()
+		-- 	return {
+		-- 		-- ...
+		-- 		formatting = {
+		-- 			format = require("lspkind").cmp_format({
+		-- 				before = require("tailwind-tools.cmp").lspkind_format,
+		-- 			}),
+		-- 		},
+		-- 	}
+		-- end,
 	},
 }
 -- vim: ts=2 sts=2 sw=2 et

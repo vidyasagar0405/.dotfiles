@@ -27,6 +27,10 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
+			local handlers = {
+				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+			}
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 				callback = function(event)
@@ -42,6 +46,9 @@ return {
 						mode = mode or "n"
 						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
+
+					-- Restart LSP
+					-- map("<leader>l", vim.cmd("LspRestart"), "Restart LSP")
 
 					--  To jump back, press <C-t>.
 					map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
@@ -70,6 +77,10 @@ return {
 
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
+
+					-- Opens a popup that displays documentation about the word under your cursor
+					--  See `:help K` for why this keymap.
+					map("K", vim.lsp.buf.hover, "Hover Documentation")
 
 					-- This is not Goto Definition, this is Goto Declaration.
 					--  For example, in C this would take you to the header.
@@ -145,11 +156,12 @@ return {
 				---------------------------------------------------------------------------------
 				--- R
 				---------------------------------------------------------------------------------
-				r_language_server = {},
+				-- r_language_server = {},
 				---------------------------------------------------------------------------------
 				--- GO
 				---------------------------------------------------------------------------------
 				gopls = {},
+				-- templ = {},
 				---------------------------------------------------------------------------------
 				--- Python
 				---------------------------------------------------------------------------------
@@ -169,10 +181,18 @@ return {
 
 				ruff = {},
 				--------------------------------------------------------------------------------
-				--- Nextflow
+				--- Rust
 				--------------------------------------------------------------------------------
 				-- rust_analyzer = {},
 
+				--------------------------------------------------------------------------------
+				--- Haskell
+				--------------------------------------------------------------------------------
+				-- hls = {
+				-- 	cmd = { "/home/vs/.ghcup/bin/haskell-language-server-9.12.2~2.10.0.0" },
+				-- },
+				---
+				---
 				--------------------------------------------------------------------------------
 				---Lua
 				--------------------------------------------------------------------------------
@@ -204,15 +224,36 @@ return {
 						},
 					},
 				},
+				--------------------------------------------------------------------------------
+				---Tail Wind CSS
+				--------------------------------------------------------------------------------
+				tailwindcss = {
+					settings = {
+						tailwindCSS = {
+							hovers = true,
+							suggestions = true,
+							codeActions = true,
+						},
+					},
+				},
 			}
 
 			require("mason").setup()
 
 			local ensure_installed = vim.tbl_keys(servers or {})
+
+			-- Remove Haskell if present
+			ensure_installed = vim.tbl_filter(function(server)
+				return server ~= "hls"
+			end, ensure_installed)
+
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
 			})
-			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+			require("mason-tool-installer").setup({
+				ensure_installed = ensure_installed,
+			})
 
 			require("mason-lspconfig").setup({
 				handlers = {
@@ -232,7 +273,9 @@ return {
 				cmd = {
 					"/usr/lib/jvm/java-17-openjdk/bin/java",
 					"-jar",
-					vim.fn.expand("~/.local/share/nvim/mason/packages/nextflow-language-server/language-server-all.jar"),
+					vim.fn.expand(
+						"~/.local/share/nvim/mason/packages/nextflow-language-server/language-server-all.jar"
+					),
 				},
 				filetypes = { "nextflow" },
 				root_dir = util.root_pattern("nextflow.config", ".git"),
@@ -244,6 +287,28 @@ return {
 						},
 					},
 				},
+			})
+
+			-- Configure nextflow_ls separately since it's not available in Mason
+			require("lspconfig").ocamllsp.setup({
+				cmd = {
+					"/home/vs/.opam/ocaml5.2/bin/ocamllsp",
+				},
+				filetypes = { "ocaml" },
+				root_dir = util.root_pattern(".ocamlformat", ".git", "main.ml"),
+				capabilities = vim.lsp.protocol.make_client_capabilities(),
+				handlers = handlers,
+			})
+
+			-- Configure nextflow_ls separately since it's not available in Mason
+			require("lspconfig").hls.setup({
+				cmd = {
+					"/home/vs/.ghcup/bin/haskell-language-server-9.12.2~2.10.0.0",
+				},
+				filetypes = { "haskell", "lhaskell", "cabal" },
+				root_dir = util.root_pattern(".git", "main.hs", "Main.hs", "*.cabal", "stack.yaml", "stack.yaml.lock"),
+				capabilities = vim.lsp.protocol.make_client_capabilities(),
+				handlers = handlers,
 			})
 		end,
 	},
