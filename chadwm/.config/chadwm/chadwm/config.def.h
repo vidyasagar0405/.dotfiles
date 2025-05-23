@@ -251,8 +251,8 @@ static Key keys[] = {
     { MODKEY|ShiftMask,                 XK_r,       restart,           {0} },
 
     // hide & restore windows
-    { MODKEY,                           XK_h,       hidewin,        {0} },
-    { MODKEY|ShiftMask,                 XK_h,       restorewin,     {0} },
+    /*{ MODKEY,                           XK_h,       hidewin,        {0} },*/
+    /*{ MODKEY|ShiftMask,                 XK_h,       restorewin,     {0} },*/
 
     TAGKEYS(                            XK_1,                       0)
     TAGKEYS(                            XK_2,                       1)

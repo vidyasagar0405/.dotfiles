@@ -1,6 +1,6 @@
 vim.cmd([[
   function! OpenMarkdownPreview(url)
-    execute "silent ! brave --new-window " . a:url
+    execute "silent !  zen-browser --new-window " . a:url
   endfunction
 ]])
 
@@ -67,5 +67,13 @@ return {
 				vim.cmd("MarkdownPreview")
 			end, { desc = "Add file to harpoon" })
 		end,
+	},
+	{
+		"hedyhli/markdown-toc.nvim",
+		ft = "markdown", -- Lazy load on markdown filetype
+		cmd = { "Mtoc" }, -- Or, lazy load on "Mtoc" command
+		opts = {
+			-- Your configuration here (optional)
+		},
 	},
 }

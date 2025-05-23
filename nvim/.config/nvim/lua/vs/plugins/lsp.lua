@@ -48,7 +48,7 @@ return {
 					end
 
 					-- Restart LSP
-					-- map("<leader>l", vim.cmd("LspRestart"), "Restart LSP")
+					map("<leader>lr", vim.cmd("LspRestart"), "Restart LSP")
 
 					--  To jump back, press <C-t>.
 					map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
@@ -268,26 +268,26 @@ return {
 				},
 			})
 
-			-- Configure nextflow_ls separately since it's not available in Mason
-			require("lspconfig").nextflow_ls.setup({
-				cmd = {
-					"/usr/lib/jvm/java-17-openjdk/bin/java",
-					"-jar",
-					vim.fn.expand(
-						"~/.local/share/nvim/mason/packages/nextflow-language-server/language-server-all.jar"
-					),
-				},
-				filetypes = { "nextflow" },
-				root_dir = util.root_pattern("nextflow.config", ".git"),
-				capabilities = vim.lsp.protocol.make_client_capabilities(),
-				settings = {
-					nextflow = {
-						files = {
-							exclude = { ".git", ".nf-test", "work" },
-						},
-					},
-				},
-			})
+			-- -- Configure nextflow_ls separately since it's not available in Mason
+			-- require("lspconfig").nextflow_ls.setup({
+			-- 	cmd = {
+			-- 		"/usr/lib/jvm/java-17-openjdk/bin/java",
+			-- 		"-jar",
+			-- 		vim.fn.expand(
+			-- 			"~/.local/share/nvim/mason/packages/nextflow-language-server/language-server-all.jar"
+			-- 		),
+			-- 	},
+			-- 	filetypes = { "nextflow" },
+			-- 	root_dir = util.root_pattern("nextflow.config", ".git"),
+			-- 	capabilities = vim.lsp.protocol.make_client_capabilities(),
+			-- 	settings = {
+			-- 		nextflow = {
+			-- 			files = {
+			-- 				exclude = { ".git", ".nf-test", "work" },
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
 
 			-- Configure nextflow_ls separately since it's not available in Mason
 			require("lspconfig").ocamllsp.setup({
@@ -300,16 +300,21 @@ return {
 				handlers = handlers,
 			})
 
-			-- Configure nextflow_ls separately since it's not available in Mason
-			require("lspconfig").hls.setup({
-				cmd = {
-					"/home/vs/.ghcup/bin/haskell-language-server-9.12.2~2.10.0.0",
-				},
-				filetypes = { "haskell", "lhaskell", "cabal" },
-				root_dir = util.root_pattern(".git", "main.hs", "Main.hs", "*.cabal", "stack.yaml", "stack.yaml.lock"),
-				capabilities = vim.lsp.protocol.make_client_capabilities(),
-				handlers = handlers,
-			})
+			-- require("lspconfig").hls.setup({
+			-- 	cmd = {
+			-- 		"/home/vs/.ghcup/bin/haskell-language-server-9.6.7~2.10.0.0",
+			-- 	},
+			-- 	filetypes = { "haskell", "lhaskell", "cabal" },
+			-- 	root_dir = util.root_pattern(".git", "main.hs", "Main.hs", "*.cabal", "stack.yaml", "stack.yaml.lock"),
+			-- 	capabilities = vim.lsp.protocol.make_client_capabilities(),
+			-- 	handlers = handlers,
+			-- 	settings = {
+			-- 		haskell = {
+			-- 			formattingProvider = "ormolu",
+			-- 			cabalFormattingProvider = "cabalfmt",
+			-- 		},
+			-- 	},
+			-- })
 		end,
 	},
 }

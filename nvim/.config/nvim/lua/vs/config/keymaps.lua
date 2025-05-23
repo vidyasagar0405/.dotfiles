@@ -98,7 +98,6 @@ vim.keymap.set("n", "<leader>xb", function()
 	vim.cmd("startinsert") -- Start in insert mode in the terminal
 end, { noremap = true, silent = true, desc = "Run bash file in split" })
 
-
 vim.keymap.set("n", "<leader>xh", function()
 	vim.cmd("write") -- Open a vertical split
 	local file = vim.fn.expand("%:p") -- Get the full path of the current file
@@ -106,3 +105,11 @@ vim.keymap.set("n", "<leader>xh", function()
 	vim.cmd("term ghci-9.12.2 " .. file) -- Run the Python file in the terminal
 	vim.cmd("startinsert") -- Start in insert mode in the terminal
 end, { noremap = true, silent = true, desc = "Run bash file in split" })
+
+-- Ocaml Lsp comment disable
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "Ocaml",
+	callback = function()
+		vim.keymap.del("n", "<leader>c", { buffer = 0 })
+	end,
+})

@@ -118,18 +118,18 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end,
 })
 
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = {"*.csv"},
-    callback = function()
-      pcall(function() vim.cmd [[set],[filetype=csv_semicolon]] end)
-      pcall(function() vim.cmd [[RainbowAlign]] end)
-    end,
-})
-
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = {"*.tsv"},
-    callback = function()
-      pcall(function() vim.cmd [[set],[filetype=tsv]] end)
-      pcall(function() vim.cmd [[RainbowAlign]] end)
-    end,
-})
+-- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+--     pattern = {"*.csv"},
+--     callback = function()
+--       pcall(function() vim.cmd [[set],[filetype=csv_semicolon]] end)
+--       pcall(function() vim.cmd [[RainbowAlign]] end)
+--     end,
+-- })
+--
+-- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+--     pattern = {"*.tsv"},
+--     callback = function()
+--       pcall(function() vim.cmd [[set],[filetype=tsv]] end)
+--       pcall(function() vim.cmd [[RainbowAlign]] end)
+--     end,
+-- })

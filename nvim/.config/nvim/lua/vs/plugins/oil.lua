@@ -6,7 +6,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 	config = function()
 		vim.keymap.set("n", "<leader>e", function()
-			require("oil").toggle_float("./")
+			require("oil").toggle_float()
 		end, { desc = "Open Oil flaoting window" })
 
 		require("oil").setup({
