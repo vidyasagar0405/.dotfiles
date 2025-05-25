@@ -19,11 +19,11 @@ return {
 				lua = { "stylua" },
 				-- Conform can also run multiple formatters sequentially
 				python = function(bufnr)
-					if require("conform").get_formatter_info("ruff_format", bufnr).available then
-						return { "ruff_format" }
-					else
+					-- if require("conform").get_formatter_info("ruff_format", bufnr).available then
+					-- 	return { "ruff_format" }
+					-- else
 						return { "black", "isort" }
-					end
+					-- end
 				end,
 				go = { "goimports", "gofmt" },
 				sh = { "beautysh", "shfmt" },
