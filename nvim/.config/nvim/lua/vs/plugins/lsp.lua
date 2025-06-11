@@ -165,21 +165,21 @@ return {
 				---------------------------------------------------------------------------------
 				--- Python
 				---------------------------------------------------------------------------------
-				-- pyright = {
-				-- 	pyright = {
-				-- 		-- Using Ruff's import organizer
-				-- 		disableOrganizeImports = true,
-				-- 	},
-				-- 	python = {
-				-- 		analysis = {
-				-- 			-- Ignore all files for analysis to exclusively use Ruff for linting
-				-- 			ignore = { "*" },
-				-- 			autoImportCompletions = false,
-				-- 		},
-				-- 	},
-				-- },
-				--
-				-- ruff = {},
+				pyright = {
+					pyright = {
+						-- Using Ruff's import organizer
+						disableOrganizeImports = true,
+					},
+					python = {
+						analysis = {
+							-- Ignore all files for analysis to exclusively use Ruff for linting
+							ignore = { "*" },
+							autoImportCompletions = false,
+						},
+					},
+				},
+
+				ruff = {},
 				--------------------------------------------------------------------------------
 				--- Rust
 				--------------------------------------------------------------------------------
@@ -191,6 +191,46 @@ return {
 				-- hls = {
 				-- 	cmd = { "/home/vs/.ghcup/bin/haskell-language-server-9.12.2~2.10.0.0" },
 				-- },
+				---
+				---
+				--------------------------------------------------------------------------------
+				--- Ocaml
+				--------------------------------------------------------------------------------
+				ocamllsp = {
+					cmd = { "ocamllsp" },
+					-- cmd = { "dune", "tools", "exec", "ocamllsp" },
+
+					filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
+
+					settings = {
+						codelens = { enable = true },
+						inlayHints = { enable = true },
+						syntaxDocumentation = { enable = true },
+					},
+
+					root_dir = function(fname)
+						return require("lspconfig").util.root_pattern(
+							"*.opam",
+							"esy.json",
+							"package.json",
+							".git",
+							"dune-project",
+							"dune-workspace"
+						)(fname)
+					end,
+
+					get_language_id = function(_, ftype)
+						local language_id_of = {
+							menhir = "ocaml.menhir",
+							ocaml = "ocaml",
+							ocamlinterface = "ocaml.interface",
+							ocamllex = "ocaml.ocamllex",
+							reason = "reason",
+							dune = "dune",
+						}
+						return language_id_of[ftype]
+					end,
+				},
 				---
 				---
 				--------------------------------------------------------------------------------
@@ -271,14 +311,12 @@ return {
 			-- -- Configure nextflow_ls separately since it's not available in Mason
 			-- require("lspconfig").nextflow_ls.setup({
 			-- 	cmd = {
-			-- 		"/usr/lib/jvm/java-17-openjdk/bin/java",
+			-- 		"/usr/lib/jvm/java-21-openjdk/bin/java",
 			-- 		"-jar",
-			-- 		vim.fn.expand(
-			-- 			"~/.local/share/nvim/mason/packages/nextflow-language-server/language-server-all.jar"
-			-- 		),
+			-- 		"/home/vs/.local/share/nvim/mason/packages/nextflow-language-server/language-server-all.jar",
 			-- 	},
 			-- 	filetypes = { "nextflow" },
-			-- 	root_dir = util.root_pattern("nextflow.config", ".git"),
+			-- 	root_dir = util.root_pattern("nextflow.config", ".git", "main.nf"),
 			-- 	capabilities = vim.lsp.protocol.make_client_capabilities(),
 			-- 	settings = {
 			-- 		nextflow = {
@@ -290,15 +328,15 @@ return {
 			-- })
 
 			-- Configure nextflow_ls separately since it's not available in Mason
-			require("lspconfig").ocamllsp.setup({
-				cmd = {
-					"/home/vs/.opam/ocaml5.2/bin/ocamllsp",
-				},
-				filetypes = { "ocaml" },
-				root_dir = util.root_pattern(".ocamlformat", ".git", "main.ml"),
-				capabilities = vim.lsp.protocol.make_client_capabilities(),
-				handlers = handlers,
-			})
+			-- require("lspconfig").ocamllsp.setup({
+			-- 	cmd = {
+			--        "/home/vs/.opam/default/bin/ocamllsp"
+			-- 	},
+			-- 	filetypes = { "ocaml" },
+			-- 	root_dir = util.root_pattern(".ocamlformat", ".git", "main.ml"),
+			-- 	capabilities = vim.lsp.protocol.make_client_capabilities(),
+			-- 	handlers = handlers,
+			-- })
 
 			-- require("lspconfig").hls.setup({
 			-- 	cmd = {

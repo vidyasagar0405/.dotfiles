@@ -28,7 +28,19 @@ return {
 				find_files = {
 					theme = "ivy",
 					layout_config = {
-						height = 0.5,
+						height = 0.6,
+					},
+				},
+				live_grep = {
+					theme = "ivy",
+					layout_config = {
+						height = 0.6,
+					},
+				},
+				grep_string = {
+					theme = "ivy",
+					layout_config = {
+						height = 0.6,
 					},
 				},
 			},

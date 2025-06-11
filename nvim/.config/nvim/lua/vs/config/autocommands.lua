@@ -79,7 +79,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "bigfile",
 	callback = function(ev)
 		vim.b.minianimate_disable = true
-        vim.b.minihipatterns_disable = true
+		vim.b.minihipatterns_disable = true
 		-- vim.cmd("syntax off")
 		vim.cmd("Gitsigns detach")
 		vim.opt_local.foldmethod = "manual"
@@ -91,7 +91,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Stop
-
 -- vim.api.nvim_create_autocmd("FocusLost", {
 --     desc = "Save on leave insert mode",
 --     group = vim.api.nvim_create_augroup("Save-on-leave-insert-mode", { clear = true }),
@@ -110,12 +109,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = {"*"},
-    callback = function()
-      local save_cursor = vim.fn.getpos(".")
-      pcall(function() vim.cmd [[%s/\s\+$//e]] end)
-      vim.fn.setpos(".", save_cursor)
-    end,
+	pattern = { "*" },
+	callback = function()
+		local save_cursor = vim.fn.getpos(".")
+		pcall(function()
+			vim.cmd([[%s/\s\+$//e]])
+		end)
+		vim.fn.setpos(".", save_cursor)
+	end,
 })
 
 -- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
