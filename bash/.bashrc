@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# ble.sh
-# [[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
 
 iatest=$(expr index "$-" i)
 
@@ -476,9 +474,8 @@ eval "$(zoxide init bash)"
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
-#. /usr/share/fzf/key-bindings.bash
+. /usr/share/fzf/key-bindings.bash
 
-eval "$(thefuck --alias)"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
@@ -486,16 +483,11 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 # export PATH=$PATH:$HOME/.cargo/bin
 
 export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
-setuppy
 
-
-. /opt/asdf-vm/asdf.sh
-export PATH=/home/vs/edirect:${PATH}
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
-
-source ~/.api_keys.sh
+# export PATH=/home/vs/edirect:${PATH}
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init - bash)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

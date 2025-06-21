@@ -19,11 +19,6 @@ export VISUAL="${EDITOR}"
 export BROWSER='zen-browser'
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
-
-
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1
 export LS_COLORS='no=00:fi=00:di=00;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:*.xml=00;31:'
@@ -97,26 +92,18 @@ eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 source /usr/share/fzf/key-bindings.zsh
 
-# bind '"\C-f":"zi\n"'
-
-# defined in .bash_funcs
-zle -N cd_to_dir
-bindkey '^p' cd_to_dir
-
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.config/emacs/bin
-export TEXTUAL_SNAPSHOT_FILE_OPEN_PREFIX=vscode://file/
 
 # source $HOME/github.com/varcall_env/bin/activate  # commented out by conda initialize
 
-. /opt/asdf-vm/asdf.sh
-export PATH=$HOME/edirect:${PATH}
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+# export PATH=$HOME/edirect:${PATH}
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init - zsh)"
 
 export PATH=$HOME/.ghcup/bin:${PATH}
 
@@ -172,8 +159,11 @@ export PATH=$HOME/.opam/default/bin/:${PATH}
 [[ ! -r '/home/vs/.opam/opam-init/init.zsh' ]] || source '/home/vs/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
 
+export DOCKER_HOST=unix:///var/run/docker.sock
 
-[ -f "/home/vs/.ghcup/env" ] && . "/home/vs/.ghcup/env" # ghcup-env
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s 'c' "_fuzzy_change_directory\n"
+bindkey -s ^g  "_fuzzy_edit_search_file_content\n"
+bindkey -s 'e' "_fuzzy_edit_search_file\n"
 
-
- export DOCKER_HOST=unix:///var/run/docker.sock
+[ -f "/home/vidyasagar/.ghcup/env" ] && . "/home/vidyasagar/.ghcup/env" # ghcup-env

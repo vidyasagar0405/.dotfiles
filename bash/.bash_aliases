@@ -138,7 +138,7 @@ alias rebootsafe='sudo shutdown -r now'
 alias rebootforce='sudo shutdown -r -n now'
 
 # Alias's to show disk space and space used in a folder
-alias diskspace="du -S | sort -n -r |more"
+alias diskspace="du -Sh | sort -n -r |more"
 alias folders='du -h --max-depth=1'
 alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 alias tree='tree -CAhF --dirsfirst'
@@ -162,21 +162,11 @@ alias sha1='openssl sha1'
 alias clickpaste='sleep 3; xdotool type "$(xclip -o -selection clipboard)"'
 
 # KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
-
 alias kssh="kitty +kitten ssh"
 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
 alias ezrc="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias cat='bat'
 
-alias ls='ls -aFh --color=always' # add colors and file type extensions
-alias l='ls'
+alias pc='yay -Sc' # remove all cached packages
+alias po='yay -Qtdq | ${PM_COMMAND[@]} -Rns -' # remove orphaned packages

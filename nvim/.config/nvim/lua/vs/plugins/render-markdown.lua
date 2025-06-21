@@ -1,6 +1,6 @@
 vim.cmd([[
   function! OpenMarkdownPreview(url)
-    execute "silent !  zen-browser --new-window " . a:url
+    execute "silent ! zen-browser --new-window " . a:url
   endfunction
 ]])
 
@@ -22,9 +22,10 @@ return {
 	},
 
 	{
-		"iamcco/markdown-preview.nvim",
+		-- "iamcco/markdown-preview.nvim",
+        "Tweekism/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && yarn install",
+		build = "cd app && npm install",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
@@ -48,19 +49,19 @@ return {
 				disable_filename = 0,
 				toc = {},
 			}
-			vim.g.mkdp_command_for_global = 0
-			vim.g.mkdp_open_to_the_world = 0
-			vim.g.mkdp_open_ip = ""
-			vim.g.mkdp_echo_preview_url = 0
+			vim.g.mkdp_command_for_global = 1
+            vim.g.mkdp_open_to_the_world = 1
+			vim.g.mkdp_open_ip = "0.0.0.0"
+			vim.g.mkdp_echo_preview_url = 1
 			vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
 			vim.g.mkdp_markdown_css = ""
 			vim.g.mkdp_highlight_css = ""
-			vim.g.mkdp_port = ""
+			vim.g.mkdp_port = "8051"
 			vim.g.mkdp_page_title = "「${name}」"
 			vim.g.mkdp_images_path = "/home/vs/.markdown_images"
 			vim.g.mkdp_filetypes = { "markdown" }
 			vim.g.mkdp_theme = "dark"
-			vim.g.mkdp_combine_preview = 0
+			vim.g.mkdp_combine_preview = 1
 			vim.g.mkdp_combine_preview_auto_refresh = 1
 
 			vim.keymap.set("n", "<leader>p", function()

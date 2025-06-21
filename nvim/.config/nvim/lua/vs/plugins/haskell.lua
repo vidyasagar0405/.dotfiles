@@ -11,7 +11,7 @@ return {
 		vim.keymap.set("n", "<space>cl", vim.lsp.codelens.run, opts)
 
 		-- Hoogle search
-		vim.keymap.set("n", "<space>hhs", ht.hoogle.hoogle_signature, opts)
+		vim.keymap.set("n", "<space>hss", ht.hoogle.hoogle_signature, opts)
 
 		-- Evaluate all code snippets
 		vim.keymap.set("n", "<space>hes", ht.lsp.buf_eval_all, opts)

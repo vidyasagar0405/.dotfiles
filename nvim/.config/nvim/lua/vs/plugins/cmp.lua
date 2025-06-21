@@ -36,8 +36,8 @@ return {
 			"hrsh7th/cmp-path",
 
 			-- For Tailwind CSS
-			"tailwind-tools",
-			"onsails/lspkind-nvim",
+			-- "tailwind-tools",
+			-- "onsails/lspkind-nvim",
 		},
 		config = function()
 			-- See `:help cmp`
